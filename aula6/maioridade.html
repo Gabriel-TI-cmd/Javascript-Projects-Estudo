@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maioridade</title>
+    <style>
+        div#res {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é de maior?</h1>
+    <h2>Faça o teste abaixo:</h2>
+    <p>Digite sua idade: <input type="number" name="txtage" id="txtage" placeholder="Sua idade" min="0" max="151"> anos.</p>
+    <input type="button" value="Verificar" onclick="verificar()">
+    <div id="res">
+
+    </div>
+    <script>
+        function verificar() {
+            var idade = window.document.getElementById("txtage")
+            var idadeNum = Number.parseInt(idade.value)
+            var res = window.document.querySelector("div#res")
+            res.innerHTML = `Você tem ${idadeNum} anos de idade. `
+            if (idadeNum < 18) {
+                res.innerHTML += "Você é menor de idade."
+            } else {
+                if (idadeNum >= 18 && idadeNum < 65) {
+                    res.innerHTML += "Você é maior de idade."
+                } else {
+                    res.innerHTML += "Você é idoso."
+                }
+            }
+        }
+    </script>
+</body>
+</html>

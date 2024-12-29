@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        body{
+            background-color: rgb(100, 100, 179);
+            color: white;
+            font: normal 20 pt Arial; /* Comentário em CSS; */
+        }
+
+        h1{
+            color: rgb(240, 240, 18);
+        }
+    </style>
+</head>
+<body>
+    <h1>Olá, Mundo!</h1> <!-- Comentário em html -->
+    <p>Aprender Javascript não é aprender Java.</p>
+    <script>
+        var n1 = window.prompt('Digite um número:') //O prompt Retorna string, mesmo se digitar número;
+        var n2 = Number.parseFloat(window.prompt('Digite outro número:')) // Poderia ser apenas Number();
+        var soma = Number.parseFloat(n1) + n2
+        window.alert(`A soma entre ${n1} e ${n2} é ${soma}`) // Posso usar o String(n) ou também n.toString() para converter número para string;
+    </script>
+</body>
+</html>

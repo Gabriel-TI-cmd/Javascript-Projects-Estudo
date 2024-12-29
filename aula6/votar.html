@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptidão para Votar</title>
+    <style>
+        div#res {
+            margin-top: 25px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Você está apto para votar?</h1>
+    <h2>Faça o teste abaixo:</h2>
+    <p>Digite sua idade: <input type="number" name="idade" id="idade" placeholder="Sua idade" min="0" max="151"> anos</p>
+    <input type="button" value="Verificar" onclick="concluir()">
+    <div id="res">
+
+    </div>
+    <script>
+        function concluir() {
+            var idade = window.document.querySelector("input#idade")
+            var res = window.document.querySelector("div#res")
+            var idadeNum = Number.parseInt(idade.value)
+            res.innerHTML = `Você tem <strong>${idadeNum} anos</strong>. `
+            if (idadeNum < 16) {
+                res.innerHTML += "Não pode votar!"
+            } else if (idadeNum >= 16 && idadeNum < 18) {
+                    res.innerHTML += "Voto opcional!"
+            } else if (idadeNum >= 18 && idadeNum < 65) {
+                    res.innerHTML += "Voto obrigatório!"
+            } else {
+                res.innerHTML += "Voto opcional!"
+            }
+            }
+    </script>
+</body>
+</html>
